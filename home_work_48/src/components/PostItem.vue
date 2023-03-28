@@ -12,7 +12,9 @@
         <p>
             <strong>Details:</strong> {{ post.details }}
         </p>
+        <button @click="$router.push(`/posts/${post.uid}`), $store.commit('getPost', post.uid)">More</button>
         <button @click="$emit('remove', post)">Remove</button>
+        
     </div>
 </template>
 

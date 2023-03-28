@@ -10,7 +10,7 @@
                 v-model="user.name"
                 placeholder="Your nickname"
             />
-            <button @click="create">Login</button>
+            <button @click="$store.commit('newName', this.user.name)">Login</button>
         </form>
     </div>
 </template>
@@ -28,6 +28,7 @@ export default {
     methods: {
         create() {
             this.$emit("create", this.user);
+            $store.commit('newName', this.user)
             this.user = {
                 name: "",
             }
@@ -39,8 +40,7 @@ export default {
 <style scoped>
     div {
         padding: 10px;
-        width: 260px;
-        margin-top: 20px;
+        width: 280px;
     }
     button {
         margin-left: 10px;
