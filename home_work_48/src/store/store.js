@@ -26,7 +26,7 @@ export default createStore({
             state.posts = state.posts.filter(p => p.uid !== post.uid);
         },
         getPost(state, uid) {
-            state.post = state.posts.filter(p => p.uid === uid);
+            state.post = state.posts.find(p => p.uid === uid);
         }
     },
     actions: {
